@@ -1,0 +1,2 @@
+#!/bin/sh
+firefox http://cn2.php.net/$1

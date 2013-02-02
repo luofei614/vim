@@ -1,0 +1,2 @@
+#!/bin/sh
+firefox "http://www.google.com.tw/search?sitesearch=w3school.com.cn&as_q=$1"
