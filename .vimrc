@@ -95,7 +95,7 @@ autocmd FileType javascript set dictionary=~/.vim/javascript.dict
 
 autocmd FileType php set keywordprg=~/.vim/phpman
 
-autocmd FileType js,css,html set keywordprg=~/.vim/man
+autocmd FileType javascript,css,html set keywordprg=~/.vim/man
 
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-D> :call PhpDocSingle()<CR> 
