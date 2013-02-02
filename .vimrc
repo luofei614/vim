@@ -171,13 +171,8 @@ map! <C-Z> <C-O>:u<CR>
 
 "双击时高亮
 
-"map <2-LeftMouse> *
-
-"map! <2-LeftMouse> <c-o>*
-
 map <2-leftmouse> \m
 inoremap <2-leftmouse> <Esc>\m
-map <.> \/
 
 "ctrl+鼠标左键跳转
 
