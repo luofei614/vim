@@ -109,7 +109,7 @@ map! <F2> <C-O><S-K><CR>
 
 map <F5> :! php -l %<CR>
 
-map! <F5> <Esc>:! php-l %<CR>
+map! <F5> <Esc>:! php -l %<CR>
 
 "快速生成tag文件
 
@@ -231,7 +231,7 @@ set backspace=eol,start,indent
 
 set encoding=utf-8
 
-set fileencoding=chinese
+set fileencoding=utf-8
 
 set fileencodings=ucs-bom,utf-8,chinese
 
