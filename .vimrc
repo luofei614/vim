@@ -39,6 +39,10 @@ Bundle 'JavaScript-syntax'
 Bundle 'phpfolding.vim'
 
 Bundle 'Mark'
+"css私有前缀
+Bundle 'prefixer.vim'
+"能缩减HTML代码
+Bundle 'xml.vim'
 
 
 
@@ -95,7 +99,9 @@ autocmd FileType javascript set dictionary=~/.vim/javascript.dict
 
 autocmd FileType php set keywordprg=~/.vim/phpman
 
-autocmd FileType javascript,css,html set keywordprg=~/.vim/man
+autocmd FileType javascript,html set keywordprg=~/.vim/man
+
+autocmd FileType css set keywordprg=~/.vim/cssman
 
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-D> :call PhpDocSingle()<CR> 
@@ -160,8 +166,7 @@ map! <C-A> <Esc>ggVG
 "ctrl+s为保存
 
 map <C-S> :w<CR>
-
-map! <C-S> <C-O>:w<CR>
+inoremap <C-S> <C-O>:w<CR>
 
 "ctrl+z撤销
 
@@ -210,9 +215,6 @@ inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
 set mouse=a
 
-"显示行数
-
-set nu
 
 " 多行缩进
 
@@ -223,7 +225,12 @@ map <S-Tab> <
 "语法高亮
 syntax enable
 syntax on
-
+set autoindent
+set number
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
 "删除键
 set backspace=eol,start,indent
 
@@ -236,10 +243,6 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese
 
 set ambiwidth=double
-
-set ts=4
-
-set sw=4
 
 set wrap "自动换行
 
