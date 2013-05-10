@@ -1,0 +1,2 @@
+#!/bin/sh
+chromium-browser http://caniuse.com/#search=$1

@@ -1,2 +1,2 @@
 #!/bin/sh
-firefox "http://cn.bing.com/search?q=$1"
+chromium-browser "http://cn.bing.com/search?q=$1"
