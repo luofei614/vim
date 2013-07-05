@@ -43,6 +43,10 @@ Bundle 'Mark'
 Bundle 'prefixer.vim'
 "能缩减HTML代码
 Bundle 'xml.vim'
+"安装此插件解决macvim下没有加号寄存器的问题。
+Bundle 'https://github.com/kana/vim-fakeclip.git'
+
+Bundle 'https://github.com/terryma/vim-multiple-cursors.git'
 
 
 
@@ -117,6 +121,11 @@ map <F5> :! php -l %<CR>
 
 map! <F5> <Esc>:! php -l %<CR>
 
+map <F6> :! tab vim<CR><CR>
+map! <F6> <Esc>:! tab vim<CR><CR>
+
+
+
 "快速生成tag文件
 
 map <F3> :! ctags -R<CR>
@@ -181,9 +190,9 @@ inoremap <2-leftmouse> <Esc>\m
 
 "ctrl+鼠标左键跳转
 
-map <C-LeftMouse> <C-]>
+map <A-LeftMouse> <C-]>
 
-map! <C-LeftMouse> <Esc><C-]>
+map! <A-LeftMouse> <Esc><C-]>
 
  
 
@@ -209,7 +218,7 @@ endfunction
 
 inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
-
+autocmd BufEnter *.* exe "silent ! echo -e '\033];%\007'"
 
 "支持鼠标
 
