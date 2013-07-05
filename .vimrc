@@ -219,7 +219,7 @@ endfunction
 inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
 "在mac下iterm终端标题中中显示文件名称
-autocmd BufEnter *.* exe 'silent ! echo -ne "\033];%\007"'
+autocmd BufEnter *.* exe 'silent ! echo -ne "\033];%:t\007"'
 
 "支持鼠标
 
