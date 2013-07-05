@@ -218,7 +218,7 @@ endfunction
 
 inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
-autocmd BufEnter *.* exe "silent ! echo -e '\033];%\007'"
+autocmd BufEnter *.* exe 'silent ! echo -ne "\033];%\007"'
 
 "支持鼠标
 
