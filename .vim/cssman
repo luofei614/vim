@@ -1,2 +1,2 @@
 #!/bin/sh
-chromium-browser http://caniuse.com/#search=$1
+open http://caniuse.com/#search=$1

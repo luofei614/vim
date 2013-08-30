@@ -1,2 +1,2 @@
 #!/bin/sh
-chromium-browser http://cn2.php.net/$1
+open http://cn2.php.net/$1

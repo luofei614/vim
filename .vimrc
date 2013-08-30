@@ -48,7 +48,11 @@ Bundle 'https://github.com/kana/vim-fakeclip.git'
 
 Bundle 'https://github.com/terryma/vim-multiple-cursors.git'
 
-
+"snippets
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'https://github.com/bonsaiben/bootstrap-snippets.git'
 
 
 
@@ -98,6 +102,7 @@ autocmd FileType php set complete+=k | set dictionary=~/.vim/phpclist.txt
 
 "javascript自动提示，包括了jquery
 autocmd FileType javascript set dictionary=~/.vim/javascript.dict
+autocmd FileType html set dictionary=~/.vim/html.dict
 
 "查找手册
 
@@ -216,7 +221,7 @@ endfunction
 
 "注意要用inoremap，不能用map！，如果用map！在命令模式下tab键没有提示功能。
 
-inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+autocmd FileType php,c,java,javascript inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
 "在mac下iterm终端标题中中显示文件名称
 autocmd BufEnter *.* exe 'silent ! echo -ne "\033];%:t\007"'
@@ -241,6 +246,11 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+"加快速度
+"set synmaxcol=200
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
 "删除键
 set backspace=eol,start,indent
 

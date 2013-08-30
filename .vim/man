@@ -1,2 +1,2 @@
 #!/bin/sh
-chromium-browser "http://cn.bing.com/search?q=$1"
+open "http://cn.bing.com/search?q=$1"
