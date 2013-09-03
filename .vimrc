@@ -16,13 +16,15 @@ Bundle 'The-NERD-tree'
 
 Bundle 'Tagbar'
 
-Bundle 'minibufexpl.vim'
+"Bundle 'minibufexpl.vim'
 
 Bundle 'ZenCoding.vim'
 
 Bundle 'L9'
 
 Bundle 'FuzzyFinder'
+"快速浏览文件，FuzzyFinder 也能快速浏览文件， 但是如果项目文件多会很慢
+Bundle 'Command-T' 
 
 Bundle 'WebAPI.vim'
 
@@ -149,9 +151,19 @@ map! <F12> <Esc>:TagbarToggle<CR>
 
 "快速查找文件
 
-map <C-P> :FufCoverageFile<CR>
+map <C-P> :CommandT<CR>
+map! <C-P> <Esc>:w<CR>:CommandT<CR>
 
-map! <C-P> <Esc>:w<CR>:FufCoverageFile<CR>
+"文件新tab页打开
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
+
+
+"快速查找文函数
+
+map <C-F> :FufTag<CR>
+
+map! <C-F> <Esc>:w<CR>:FufTag<CR>
 
 "快速关闭
 
@@ -194,6 +206,19 @@ map <2-leftmouse> \m
 inoremap <2-leftmouse> <Esc>\m
 
 "ctrl+鼠标左键跳转
+
+"--------------------
+" Function: Open tag under cursor in new tab
+" Source:   http://stackoverflow.com/questions/563616/vimctags-tips-and-tricks
+"--------------------
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"--------------------
+" Function: Remap keys to make it more similar to firefox tab functionality
+" Purpose:  Because I am familiar with firefox tab functionality
+"--------------------
+map     <C-T>       :tabnew<CR>
+map     <C-N>       :!gvim &<CR><CR>
+map     <C-W>       :confirm bdelete<CR>
 
 map <A-LeftMouse> <C-]>
 
