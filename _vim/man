@@ -1,2 +1,0 @@
-#!/bin/sh
-open "http://cn.bing.com/search?q=$1"
