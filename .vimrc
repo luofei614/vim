@@ -38,6 +38,7 @@ Bundle 'https://github.com/luofei614/html5css3.git'
 
 Bundle 'JavaScript-syntax'
 
+"折叠的扩展
 Bundle 'phpfolding.vim'
 
 Bundle 'Mark'
@@ -55,6 +56,11 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'https://github.com/bonsaiben/bootstrap-snippets.git'
+
+"bookmark  mm 添加书签,  mn 移动书签  mp 移动到前一个书签  ma 删除所有书签
+Bundle "https://github.com/vim-scripts/Vim-bookmark.git"
+
+Bundle "phpunit"
 
 
 
@@ -155,7 +161,7 @@ map <C-P> :CommandT<CR>
 map! <C-P> <Esc>:w<CR>:CommandT<CR>
 
 "文件新tab页打开
-let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionMap = '<space>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
 
 
@@ -167,7 +173,7 @@ map! <C-F> <Esc>:w<CR>:FufTag<CR>
 
 "快速关闭
 
-map <S-Q> :q<CR>:q<CR>:q<CR>:q<CR>
+map <S-Q> :wqa<CR>
 
 nnoremap <c-]> g<c-]>
 
@@ -215,10 +221,9 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "--------------------
 " Function: Remap keys to make it more similar to firefox tab functionality
 " Purpose:  Because I am familiar with firefox tab functionality
+" 切换tab页 用gt
 "--------------------
 map     <C-T>       :tabnew<CR>
-map     <C-N>       :!gvim &<CR><CR>
-map     <C-W>       :confirm bdelete<CR>
 
 map <A-LeftMouse> <C-]>
 
@@ -246,7 +251,9 @@ endfunction
 
 "注意要用inoremap，不能用map！，如果用map！在命令模式下tab键没有提示功能。
 
-autocmd FileType php,c,java,javascript inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+"shift+tab 展开代码片段
+imap <S-TAB> <Plug>snipMateNextOrTrigger
 
 "在mac下iterm终端标题中中显示文件名称
 autocmd BufEnter *.* exe 'silent ! echo -ne "\033];%:t\007"'
@@ -258,9 +265,9 @@ set mouse=a
 
 " 多行缩进
 
-map <Tab> >
+vnoremap <Tab> >
 
-map <S-Tab> <
+vnoremap <S-Tab> <
 
 "语法高亮
 syntax enable

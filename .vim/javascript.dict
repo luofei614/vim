@@ -277,7 +277,7 @@ get
 getJSON
 getScript
 grep
-Deffered
+Deferred
 always
 done
 fail
