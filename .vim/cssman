@@ -1,2 +1,0 @@
-#!/bin/sh
-open http://caniuse.com/#search=$1
