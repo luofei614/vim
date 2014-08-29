@@ -36,7 +36,11 @@ Bundle 'PDV--phpDocumentor-for-Vim'
 
 Bundle 'https://github.com/luofei614/html5css3.git'
 
-Bundle 'JavaScript-syntax'
+"Bundle 'JavaScript-syntax'
+Bundle "pangloss/vim-javascript"
+
+" jquery , angularjs 等语法
+Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
 "折叠的扩展
 Bundle 'phpfolding.vim'
@@ -62,9 +66,31 @@ Bundle "https://github.com/vim-scripts/Vim-bookmark.git"
 
 Bundle "phpunit"
 
+"快速跳转到字符
+Bundle "EasyMotion"
+
+Bundle "https://github.com/bling/vim-airline.git" 
+
+Bundle "https://github.com/luofei614/vim-golang.git"
+
+Bundle "https://github.com/burnettk/vim-angular.git"
+
+"检查程序语法错误
+Bundle "https://github.com/scrooloose/syntastic.git"
+
 
 
 filetype plugin indent on " required!
+
+
+"vimgrep 查询时排除composer的vendor目录
+set wildignore=vendor/**
+
+let g:used_javascript_libs = 'jQuery,AngularJS,AngularUI,RequireJS'
+
+"let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+"php只做语法检查
+let g:syntastic_php_checkers = ['php']
 
 "autocomplpop 设置
 
@@ -128,16 +154,14 @@ map <F2> <S-K><CR>
 
 map! <F2> <C-O><S-K><CR>
 
-"检查php语法错误（如何用php_check_snytax插件的话，会和minibuf有冲突，也会导致也没乱层现象）
-
-map <F5> :! php -l %<CR>
-
-map! <F5> <Esc>:! php -l %<CR>
 
 map <F6> :! tab vim<CR><CR>
 map! <F6> <Esc>:! tab vim<CR><CR>
 
+"删除不剪切, rd
 
+nnoremap r "_d
+vnoremap r "_d
 
 "快速生成tag文件
 
@@ -173,7 +197,7 @@ map! <C-F> <Esc>:w<CR>:FufTag<CR>
 
 "快速关闭
 
-map <S-Q> :wqa<CR>
+map <S-Q> :qa<CR>
 
 nnoremap <c-]> g<c-]>
 
