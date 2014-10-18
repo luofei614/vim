@@ -32,6 +32,8 @@ Bundle 'Gist.vim'
 
 Bundle 'molokai'
 
+Bundle 'Solarized'
+
 Bundle 'PDV--phpDocumentor-for-Vim'
 
 Bundle 'https://github.com/luofei614/html5css3.git'
@@ -83,8 +85,8 @@ Bundle "https://github.com/scrooloose/syntastic.git"
 filetype plugin indent on " required!
 
 
-"vimgrep 查询时排除composer的vendor目录
-set wildignore=vendor/**
+"vimgrep查询时排除composer的vendor目录,排除前端bower和node的包文件目录,CommandT也不会查到他们
+set wildignore=vendor/**,bower_components/**,node_modules/**
 
 let g:used_javascript_libs = 'jQuery,AngularJS,AngularUI,RequireJS'
 
@@ -113,7 +115,10 @@ let g:tagbar_width=20
 
 set t_Co=256
 
-colorscheme molokai
+let g:solarized_termcolors=16
+"set background=dark
+set background=light
+colorscheme solarized
 
 "zencoding 设置
 
